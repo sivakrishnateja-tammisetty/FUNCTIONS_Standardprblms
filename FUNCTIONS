@@ -1,1 +1,80 @@
-/
+#include <iostream>
+using namespace std;
+void sum_of_digits(int n)
+{
+    int sum=0;
+    while(n !=0)
+    {
+        int last_digit=n%10;
+        sum+=last_digit;
+        n/=10;
+    }
+    cout<<"Sum of digits for an given number is :"<<sum<<endl;
+}
+int main() {
+    int n=324;
+    sum_of_digits(n);
+    
+   
+    return 0;
+}
+
+//whether number is prime or not
+#include <iostream>
+using namespace std;
+int check_prime(int n)
+{
+    for(int i=2;i<n;i++)
+    {
+        if(n%i==0)
+        {
+            return 0;
+        }
+    }
+    return 1;
+}
+int main() {
+    int n=4;
+    int flag=check_prime(n);
+    if(flag==1)
+    {
+        cout<<"Prime"<<endl;
+    }
+    else
+    {
+        cout<<"Not prime"<<endl;
+    }    
+   
+    return 0;
+}
+
+//No of prime numbers present in an array
+#include <iostream>
+using namespace std;
+int check_prime(int n)
+{
+    for(int i=2;i<n;i++)
+    {
+        if(n%i==0)
+        {
+            return 0;
+        }
+    }
+    return 1;
+}
+void count_prime(int *a,int n)
+{
+    int prime_count=0;
+    for(int i=0;i<n;i++)
+    {
+        int flag=check_prime(a[i]);
+        prime_count+=flag;
+    }
+    cout<<"Number of prime numbers present in an array is :"<<prime_count<<endl;
+}
+int main() {
+    int arr[]={11,2,3,5,6};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    count_prime(arr,n);
+    return 0;
+}
